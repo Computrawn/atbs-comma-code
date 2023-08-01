@@ -1,8 +1,4 @@
-"""
-This needs work.
-"""
-
-# I should revisit this to see if I can refine it further.
+# This needs work. I know I can simplify this.
 
 
 def eggs(spamParam):
