@@ -1,10 +1,20 @@
-# This needs work. I know I can simplify this.
+#!/usr/bin/env python3
+# comma_code.py — An exercise in understanding lists.
+# For more information, see README.md
+
+import logging
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    filename="logging.txt",
+    format="%(asctime)s -  %(levelname)s -  %(message)s",
+)
+logging.disable(logging.CRITICAL)  # Note out to enable logging.
 
 
-def eggs(spamParam):
-    spamParam.insert(
-        -1, "and"
-    )  # Inserts 'and' (second arguement) into second-to-last place on list (first arguement).
+def eggs(spam):
+    spam.insert(-1, "and")
+
     i = 0
     try:  # Iterates through all but last two entries in list, adding commas and spaces.
         for i in range(len(spam) - 2):
