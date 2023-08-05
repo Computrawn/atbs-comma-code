@@ -11,17 +11,18 @@ logging.basicConfig(
 )
 logging.disable(logging.CRITICAL)  # Note out to enable logging.
 
-spam_1 = ["Alice", "Bob", 3.14159256, "apples", "oranges", 42, "cats", "dogs"]
-spam_2 = ["Alice"]
-spam_3 = []
+spam = [
+    ["Alice", "Bob", 3.14159256, "apples", "oranges", 42, "cats", "dogs"],
+    ["Alice"],
+    [],
+]
 
 
 def main() -> None:
-    """Print results of calling eggs on arguments with exception for empty list."""
+    """Print results of calling eggs on each bacon in spam with exception for empty list."""
     try:
-        print(eggs(spam_1))
-        print(eggs(spam_2))
-        print(eggs(spam_3))
+        for bacon in spam:
+            print(eggs(bacon))
     except IndexError:
         print("List is empty")
     # Outputs:
