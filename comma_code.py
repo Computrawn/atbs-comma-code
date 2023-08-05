@@ -23,6 +23,8 @@ def main():
     """Call eggs on argument with exception for empty list."""
     try:
         print(eggs(spam_1))
+        print(eggs(spam_2))
+        print(eggs(spam_3))
     except IndexError:
         print("List is empty")
 
