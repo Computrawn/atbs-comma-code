@@ -13,21 +13,40 @@ logging.disable(logging.CRITICAL)  # Note out to enable logging.
 
 
 def eggs(spam):
-    spam.insert(-1, "and")
-
-    i = 0
-    try:  # Iterates through all but last two entries in list, adding commas and spaces.
-        for i in range(len(spam) - 2):
-            print(f"{spam[i]}, ", end="")
-        print(f"{spam[-2]} {spam[-1]}")  # prints 'and' and last item in list
-    except:  # If list is empty, except clause triggers.
+    """
+    Print list contents with commas between items and 'and' at penultimate position if
+    length of list greater than 1. Otherwise, print zero index or inform user of index error.
+    """
+    try:
+        if len(spam) == 1:
+            print(spam[0])
+        else:
+            spam.insert(-1, "and")
+            for bacon in spam[:-2]:
+                print(f"{bacon}, ", end="")
+            print(f"{spam[-2]} {spam[-1]}")
+    except IndexError:
         print("List is empty.")
 
 
 spam = ["Alice", "Bob", 3.14159256, "apples", "oranges", 42, "cats", "dogs"]
 # Outputs 'Alice, Bob, 3.14159256, apples, oranges, 42, cats, and dogs'
-spam1 = []  # Outputs 'List is empty.'
-spam2 = []  # Outputs 'List is empty.'
-spam3 = ["Alice"]  # Outputs  'and Alice'
-spam4 = [1]  # Outputs 'and 1'
-eggs(spam)  # Calls function eggs and passes spam list as parameter.
+spam1 = ["Bob", {"age": 42, "height": "6'9"}]
+# Outputs 'Bob, and {'age': 42, 'height': "6'9"}'
+spam2 = []
+# Outputs 'List is empty.'
+spam3 = ["Alice"]
+# Outputs 'Alice'
+spam4 = [1]
+# Outputs '1'
+
+spam_list = [spam, spam1, spam2, spam3, spam4]
+
+
+def main():
+    for item in spam_list:
+        eggs(item)
+
+
+if __name__ == "__main__":
+    main()
