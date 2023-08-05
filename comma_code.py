@@ -17,7 +17,7 @@ spam_3 = []
 
 
 def main():
-    """Call eggs on argument with exception for empty list."""
+    """Print results of calling eggs on arguments with exception for empty list."""
     try:
         print(eggs(spam_1))
         print(eggs(spam_2))
