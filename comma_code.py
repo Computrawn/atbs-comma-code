@@ -16,7 +16,7 @@ spam_2 = ["Alice"]
 spam_3 = []
 
 
-def main():
+def main() -> None:
     """Print results of calling eggs on arguments with exception for empty list."""
     try:
         print(eggs(spam_1))
@@ -30,12 +30,12 @@ def main():
     # List is empty.
 
 
-def eggs(spam):
+def eggs(spam: list) -> str:
     """Takes in list and returns string of contents with commas between items and 'and'
     at penultimate position if length greater than 1. Otherwise, return zero index."""
 
     if len(spam) == 1:
-        bacon = spam[0]
+        bacon = str(spam[0])
     else:
         spam_string = [str(bacon) for bacon in spam]
         bacon = f"{', '.join(spam_string[:-1])}, and {spam_string[-1]}"
