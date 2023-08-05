@@ -12,11 +12,8 @@ logging.basicConfig(
 logging.disable(logging.CRITICAL)  # Note out to enable logging.
 
 spam_1 = ["Alice", "Bob", 3.14159256, "apples", "oranges", 42, "cats", "dogs"]
-# Outputs 'Alice, Bob, 3.14159256, apples, oranges, 42, cats, and dogs'
 spam_2 = ["Alice"]
-# Outputs 'Alice'
 spam_3 = []
-# Outputs 'List is empty.'
 
 
 def main():
@@ -27,6 +24,10 @@ def main():
         print(eggs(spam_3))
     except IndexError:
         print("List is empty")
+    # Outputs:
+    # Alice, Bob, 3.14159256, apples, oranges, 42, cats, and dogs
+    # Alice
+    # List is empty.
 
 
 def eggs(spam):
